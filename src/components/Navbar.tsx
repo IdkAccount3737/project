@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import logo from '../res/SURGE_NAVBAR_LOGO.png';
+
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +21,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <img 
-              src="src/res/SURGE_NAVBAR_LOGO.png" 
+              src={logo}
               alt="Logo" 
               className="h-10 w-auto"
             />
