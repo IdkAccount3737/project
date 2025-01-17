@@ -2,7 +2,7 @@ import React from 'react';
 import { Trophy } from 'lucide-react';
 import { motion } from 'framer-motion';
 import ParallaxScroll from './animations/ParallaxScroll';
-import logo from 'src/res/SURGE_logo_znak_gold.png';
+import logo from '../res/SURGE_logo_znak_gold.png';
 
 const Hero = () => {
   return (
