@@ -2,6 +2,7 @@ import React from 'react';
 import { Trophy } from 'lucide-react';
 import { motion } from 'framer-motion';
 import ParallaxScroll from './animations/ParallaxScroll';
+import logo from 'src/res/SURGE_logo_znak_gold.png';
 
 const Hero = () => {
   return (
@@ -33,7 +34,7 @@ const Hero = () => {
             }}
           >
           <img 
-              src="src/res/SURGE_logo_znak_gold.png" 
+              src={logo}
               alt="Trophy" 
               className="mx-auto h-36 w-36 mb-8 drop-shadow-[0_0_15px_rgba(255,215,0,0.5)]"
             />
