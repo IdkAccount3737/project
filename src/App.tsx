@@ -20,6 +20,9 @@ function App() {
           <Hero />
           <About />
         </main>
+        <TournamentStructure />
+        <FAQ />
+        <Contact />
         <Footer />
       </div>
     </div>

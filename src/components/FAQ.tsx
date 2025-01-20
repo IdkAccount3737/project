@@ -8,25 +8,27 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: 'Who can participate in the tournament?',
-      answer: 'The tournament is open to all European teams that meet our eligibility criteria. Players must be at least 16 years old and reside in Europe.'
+      question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     },
     {
-      question: 'What is the prize pool?',
-      answer: 'The total prize pool will be announced before the tournament begins. Prizes will be distributed among top-performing teams.'
+      question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     },
     {
-      question: 'How do I register my team?',
-      answer: 'Registration can be completed through our tournament portal. Make sure to have all team members\' information ready before registering.'
+      question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     },
     {
-      question: 'What is the tournament format?',
-      answer: 'The tournament follows a group stage followed by single elimination playoffs. Detailed format information can be found in the Tournament Structure section.'
+      question: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     }
   ];
 
   return (
     <section id="faq" className="py-20 bg-[#0a0a0a] relative">
+            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
+
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <FadeIn>

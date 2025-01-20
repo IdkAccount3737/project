@@ -1,5 +1,3 @@
-import React from 'react';
-import { Trophy } from 'lucide-react';
 import { motion } from 'framer-motion';
 import ParallaxScroll from './animations/ParallaxScroll';
 import logo from '../res/SURGE_logo_znak_gold.png';
@@ -75,14 +73,7 @@ const Hero = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.1 }}
           >
-            <span className="relative z-10 text-white">Zaregistrujte sa</span>
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-[#00CED1] to-[#FFD700]"
-              initial={{ x: "100%" }}
-              whileHover={{ x: 0 }}
-              transition={{ duration: 0.3 }}
-            />
-            <div className="absolute inset-0 bg-[#00CED1]" />
+        
           </motion.a>
         </div>
       </ParallaxScroll>

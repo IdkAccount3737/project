@@ -9,7 +9,6 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'O nás', href: '#about' },
-    { name: 'Guidelines', href: '#guidelines' },
     { name: 'FAQ', href: '#faq' },
     { name: 'Turnajová štruktúra', href: '#rules' },
     { name: 'Kontakt', href: '#tournament' },
