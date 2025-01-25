@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const socialLinks = [
@@ -27,9 +28,12 @@ const Footer = () => {
             ))}
           </div>
           <div className="text-center">
-            <p className="text-gray-400">
-              © {new Date().getFullYear()} Surge Europe. All rights reserved.
+            <p className="text-gray-400 mb-4">
+              {new Date().getFullYear()} Surge Europe. All rights reserved.
             </p>
+            <Link to="/vop" className="text-gray-400 hover:text-[#45A59D] transition-colors">
+              Všeobecné obchodné podmienky
+            </Link>
           </div>
         </div>
       </div>

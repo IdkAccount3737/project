@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Background from './components/Background';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -9,23 +10,31 @@ import Guidelines from './components/Guidelines';
 import Rules from './components/Rules';
 import TournamentStructure from './components/TournamentStructure';
 import Footer from './components/Footer';
+import VOP from './pages/VOP';
+
+const HomePage = () => (
+  <>
+    <Hero />
+    <About />
+    <TournamentStructure />
+    <FAQ />
+    <Contact />
+    <Footer />
+  </>
+);
 
 function App() {
   return (
-    <div className="relative">
+    <Router>
       <Background />
       <div className="relative z-10">
         <Navbar />
-        <main>
-          <Hero />
-          <About />
-        </main>
-        <TournamentStructure />
-        <FAQ />
-        <Contact />
-        <Footer />
+        <Routes>
+          <Route path="/vop" element={<VOP />} />
+          <Route path="/home" element={<HomePage />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 
