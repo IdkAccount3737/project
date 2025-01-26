@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import ParallaxScroll from './animations/ParallaxScroll';
 import logo from '../res/SURGE_logo_znak_gold.png';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <motion.div
@@ -31,7 +35,7 @@ const Hero = () => {
               delay: 0.3 
             }}
           >
-          <img 
+            <img 
               src={logo}
               alt="Trophy" 
               className="mx-auto h-36 w-36 mb-8 drop-shadow-[0_0_15px_rgba(255,215,0,0.5)]"
@@ -51,34 +55,43 @@ const Hero = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.7 }}
             >
-              MLBB Tournament
+              GAMING ORGANIZATION
             </motion.span>
           </motion.h1>
-          
-          <motion.p
-            className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto"
+
+          <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.9 }}
+            className="flex justify-center mt-12"
           >
-           Pridajte sa k prvému turnaju Mobile Legends: Bang Bang v Európe.
-          </motion.p>
-          
-          <motion.a
-            href="#tournament"
-            className="inline-block px-8 py-4 rounded-lg font-bold text-lg relative overflow-hidden group"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.1 }}
-          >
-        
-          </motion.a>
+            <Link
+              to="/tournament"
+              className="group relative px-8 py-4 bg-gradient-to-r from-[#45A59D] to-[#2C7A73] 
+                       text-white rounded-lg font-medium text-lg overflow-hidden
+                       hover:shadow-[0_0_20px_rgba(69,165,157,0.4)] transition-all duration-300"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-[#45A59D] to-[#2C7A73] opacity-0 
+                            group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+              <div className="relative flex items-center gap-3">
+                <span>{t.hero.joinTournament}</span>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className="h-5 w-5 transform group-hover:translate-x-1 transition-transform" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </Link>
+          </motion.div>
         </div>
       </ParallaxScroll>
-      
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
     </div>
   );
 };
