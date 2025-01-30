@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import logo from '../res/SURGE_NAVBAR_LOGO.png';
@@ -11,7 +11,7 @@ const Navbar = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +23,6 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    // Handle hash navigation when URL changes
     if (location.hash && location.pathname === '/home') {
       const element = document.querySelector(location.hash);
       if (element) {
@@ -32,12 +31,16 @@ const Navbar = () => {
     }
   }, [location]);
 
-  const navigation = [
-    { name: t.nav.tournaments, href: '/tournament' },
-    { name: t.nav.structure, href: location.pathname === '/home' ? '#tournament' : '/structure' },
-    { name: t.nav.rules, href: location.pathname === '/home' ? '#guidelines' : '/rules' },
-    { name: t.nav.faq, href: location.pathname === '/home' ? '#faq' : '/faq' }
-  ];
+  const navigation = location.pathname === '/tournament' 
+    ? [
+        { name: t.nav.tournaments, href: '/tournament' }
+      ]
+    : [
+        { name: t.nav.tournaments, href: '/tournament' },
+        { name: t.nav.structure, href: location.pathname === '/home' ? '#tournament' : '/structure' },
+        { name: t.nav.rules, href: location.pathname === '/home' ? '#guidelines' : '/rules' },
+        { name: t.nav.faq, href: location.pathname === '/home' ? '#faq' : '/faq' }
+      ];
 
   const isActive = (path: string) => {
     if (path.startsWith('#')) {
@@ -51,9 +54,7 @@ const Navbar = () => {
     
     if (href.startsWith('#')) {
       if (location.pathname !== '/home') {
-        // If we're not on the home page, navigate there first
         await navigate('/home');
-        // Wait for navigation to complete
         setTimeout(() => {
           const element = document.querySelector(href);
           if (element) {
@@ -62,7 +63,6 @@ const Navbar = () => {
           }
         }, 100);
       } else {
-        // If we're already on the home page, just scroll
         const element = document.querySelector(href);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
@@ -70,14 +70,9 @@ const Navbar = () => {
         }
       }
     } else {
-      // For non-hash URLs, just navigate normally
       navigate(href);
       setIsOpen(false);
     }
-  };
-
-  const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'sk' : 'en');
   };
 
   return (
@@ -85,7 +80,6 @@ const Navbar = () => {
       <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black/95 backdrop-blur-sm' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
             <Link 
               to="/home" 
               className="flex-shrink-0 group"
@@ -97,47 +91,32 @@ const Navbar = () => {
               />
             </Link>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex md:items-center md:space-x-8">
               {navigation.map((item) => (
-                <Link
+                <a
                   key={item.name}
-                  to={item.href}
+                  href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className={`text-sm font-medium transition-colors duration-200 ${
-                    isActive(item.href) 
-                    ? 'text-[#45A59D]' 
-                    : 'text-gray-300 hover:text-[#45A59D]'}`}
+                  className={`text-sm font-medium transition-colors hover:text-[#45A59D] ${
+                    isActive(item.href) ? 'text-[#45A59D]' : 'text-gray-300'
+                  }`}
                 >
                   {item.name}
-                </Link>
+                </a>
               ))}
-
-              {/* Contact Button */}
+              
               <button
                 onClick={() => setIsContactOpen(true)}
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  isActive('/contact') 
-                    ? 'text-[#45A59D]' 
-                    : 'text-gray-300 hover:text-[#45A59D]'}`}
+                className="text-sm font-medium text-gray-300 hover:text-[#45A59D] transition-colors"
               >
                 {t.nav.contact}
               </button>
-
-              {/* Language Toggle */}
-              <button
-                onClick={toggleLanguage}
-                className="p-2 text-gray-300 hover:text-[#45A59D] transition-colors duration-200"
-              >
-                <Globe className="h-5 w-5" />
-              </button>
             </div>
 
-            {/* Mobile menu button */}
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-300 hover:text-white p-2"
+                className="text-gray-300 hover:text-white"
               >
                 {isOpen ? (
                   <X className="h-6 w-6" />
@@ -149,14 +128,13 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile menu */}
         {isOpen && (
           <div className="md:hidden bg-black/95 backdrop-blur-sm">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
-                <Link
+                <a
                   key={item.name}
-                  to={item.href}
+                  href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
                   className={`block px-3 py-2 rounded-md text-base font-medium ${
                     isActive(item.href)
@@ -164,7 +142,7 @@ const Navbar = () => {
                       : 'text-gray-300 hover:text-[#45A59D] hover:bg-[#45A59D]/10'}`}
                 >
                   {item.name}
-                </Link>
+                </a>
               ))}
               <div className="flex items-center justify-between px-3 py-2">
                 <button

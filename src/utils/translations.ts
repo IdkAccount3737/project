@@ -24,6 +24,15 @@ export const translations = {
     rules: {
       title: 'Rules',
       sections: {
+        generalRules: {
+          title: 'Tournament Rules',
+          items: [
+            'All players must adhere to our Tournament Rulebook',
+            'Fair play policies must be followed at all times',
+            'Cheating, account sharing, and toxic behavior will lead to disqualification',
+            'Check detailed rules at (link)'
+          ]
+        },
         matchRules: {
           title: 'Match Rules',
           items: [
@@ -33,13 +42,13 @@ export const translations = {
             'Maximum 5 minutes pause per team during match'
           ]
         },
-        fairPlay: {
-          title: 'Fair Play',
+        technicalIssues: {
+          title: 'Technical Issues',
           items: [
-            'Any form of cheating results in immediate disqualification',
-            'Match fixing is strictly prohibited',
-            'Account sharing is not allowed',
-            'Use of external software is prohibited'
+            'Teams must ensure stable internet connection before playing',
+            'If a player disconnects, the match will continue',
+            'Major technical issues may result in a rematch (decided by organizers)',
+            'Teams not showing up within allocated time will forfeit the match'
           ]
         },
         penalties: {
@@ -57,27 +66,31 @@ export const translations = {
       title: 'FAQ',
       items: [
         {
-          question: 'How to participate?',
-          answer: 'Register through our website and join the tournament.'
-        },
-        {
-          question: 'What are the requirements?',
-          answer: 'You need a valid game account and meet age requirements.'
+          question: 'Where can I find updates on upcoming tournaments?',
+          answer: 'Follow us on [Social Media Links] or check the Tournaments section on our website for the latest announcements.'
         },
         {
           question: 'How are prizes distributed?',
-          answer: 'Prizes are distributed within 30 days after tournament end.'
+          answer: 'Prizes will be sent via bank transfer, PayPal, or in-game rewards. Players must provide the necessary information within a specified timeframe to claim their prizes.'
         },
         {
-          question: 'Technical requirements?',
-          answer: 'Stable internet connection and working microphone required.'
+          question: 'Can I play with a mixed-rank team?',
+          answer: 'Yes, unless the tournament has rank restrictions (e.g., Mythic Only tournaments). Make sure to check the tournament requirements.'
+        },
+        {
+          question: 'Do I need to pay to enter the tournaments?',
+          answer: 'Some tournaments are free to enter, while others may require a small entry fee to contribute to the prize pool. Check the tournament details before registering.'
+        },
+        {
+          question: 'How do I register for a tournament?',
+          answer: 'You can register by visiting our website, selecting an upcoming tournament, and following the registration process. Some tournaments may require a team captain to sign up on behalf of the team.'
         }
       ]
     },
     about: {
       title: 'About Us',
-      intro: 'Surge Europe is dedicated to elevating the competitive environment of Mobile Legends: Bang Bang in Europe. Our goal is to provide a professional platform for teams to showcase their skills and compete at the highest level.',
-      experience: 'With years of experience in organizing esports events, we ensure fair play, competitive integrity, and an unforgettable experience for both players and spectators.',
+      intro: 'We are an esports organization dedicated to hosting competitive Mobile Legends: Bang Bang (MLBB) tournaments in Central Europe. Our goal is to create a thriving MLBB community by providing professional and amateur players with exciting opportunities to compete and win prizes.',
+      experience: ' Our tournaments are open to all MLBB players in Central Europe. Some events may have rank or region restrictions, which will be specified in the tournament details.',
       join: 'Join us in shaping the future of MLBB esports in Europe and be part of something extraordinary.',
       subtitle: 'Leading European Tournament Platform',
       description: 'SURGE EUROPE is dedicated to creating professional esports opportunities across Europe.',
@@ -111,20 +124,20 @@ export const translations = {
       title: 'Tournament Structure',
       phases: {
         qualification: {
-          title: 'Qualification',
-          description: 'Open qualifiers for all teams. Top teams advance to the main phase.'
+          title: 'Format',
+          description: 'Our tournaments typically follow a single-elimination, double-elimination, or round-robin format, depending on the size and type of the event. Details will be provided in the tournament description.'
         },
         groups: {
-          title: 'Group Stage',
-          description: 'Teams are divided into groups, playing round-robin. Best teams advance to playoffs.'
+          title: 'Players',
+          description: 'Standard MLBB tournaments require a 5-player team, but some events may allow substitutes. Check the specific rules of each tournament.'
         },
         playoffs: {
-          title: 'Playoffs',
-          description: 'Single elimination bracket with top teams competing for finals.'
+          title: 'Location',
+          description: 'All matches are played in Custom Lobbies within Mobile Legends: Bang Bang. You will receive lobby details before your match starts.'
         },
         finals: {
-          title: 'Grand Finals',
-          description: 'Tournament peak where the champion is crowned and prize pool distributed.'
+          title: 'Prize',
+          description: ' Prizes vary by tournament and may include cash rewards, in-game diamonds, exclusive skins, and tournament trophies. Prize details will be announced with each tournament.'
         }
       }
     },
@@ -176,6 +189,15 @@ export const translations = {
     rules: {
       title: 'Pravidlá',
       sections: {
+        generalRules: {
+          title: 'Pravidlá Turnaja',
+          items: [
+            'Všetci hráči sa musia riadiť našim Turnajovým Pravidelníkom',
+            'Pravidlá fair play musia byť dodržiavané vždy',
+            'Podvádzať, zdieľať účty a toxické správanie vedie k diskvalifikácii',
+            'Zistiť podrobnejšie pravidlá na (link)'
+          ]
+        },
         matchRules: {
           title: 'Pravidlá Zápasov',
           items: [
@@ -185,13 +207,13 @@ export const translations = {
             'Maximálne 5 minút pauzy na tím počas zápasu'
           ]
         },
-        fairPlay: {
-          title: 'Fair Play',
+        technicalIssues: {
+          title: 'Technické Problémy',
           items: [
-            'Akákoľvek forma podvádzania znamená okamžitú diskvalifikáciu',
-            'Ovplyvňovanie výsledkov zápasov je prísne zakázané',
-            'Zdieľanie účtov nie je povolené',
-            'Použitie externého softvéru je zakázané'
+            'Tímy musia zabezpečiť stabilné internetové pripojenie pred hrou',
+            'Ak sa hráč odpojí, zápas bude pokračovať',
+            'Vážne technické problémy môžu vyústiť v opakovanie zápasu (rozhodnutie organizátorov)',
+            'Tímy, ktoré sa nedostaví v stanovenom čase, stratia zápas'
           ]
         },
         penalties: {

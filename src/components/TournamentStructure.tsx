@@ -7,7 +7,7 @@ const TournamentStructure = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="tournament" className="py-20 bg-[#030303] relative overflow-hidden">
+    <section id="tournament" className="py-20 bg-black relative overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="text-center mb-16">

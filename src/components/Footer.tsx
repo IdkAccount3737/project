@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Mail, MapPin} from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import ContactDialog from './ContactDialog';
 
@@ -9,9 +9,7 @@ const Footer = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   const socialLinks = [
-    { icon: <Facebook className="h-5 w-5" />, href: 'https://facebook.com' },
-    { icon: <Instagram className="h-5 w-5" />, href: 'https://instagram.com' },
-    { icon: <Twitter className="h-5 w-5" />, href: 'https://twitter.com' }
+    { icon: <Instagram className="h-5 w-5" />, href: 'https://instagram.com' }
   ];
 
   const links = [
@@ -31,7 +29,6 @@ const Footer = () => {
 
   const contactInfo = [
     { icon: <Mail className="h-5 w-5" />, text: 'kontakt@surgeeuropa.com' },
-    { icon: <Phone className="h-5 w-5" />, text: '+421 123 456 789' },
     { icon: <MapPin className="h-5 w-5" />, text: 'Európa' }
   ];
 
@@ -39,7 +36,7 @@ const Footer = () => {
     <>
       <footer className="relative">
         {/* Upper Section */}
-        <div className="bg-[#030303] py-20">
+        <div className="bg-[#111111] py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-16">
               {/* Logo and Description */}

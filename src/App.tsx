@@ -17,8 +17,8 @@ import { Contact } from 'lucide-react';
 const HomePage = () => (
   <>
     <Hero />
-    <TournamentStructure />
     <About />
+    <TournamentStructure />
     <Rules />
     <FAQ />
     <Footer />

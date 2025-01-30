@@ -9,21 +9,17 @@ const Rules = () => {
 
   const guidelines = [
     {
-      title: t.rules.sections.matchRules.title,
-      items: t.rules.sections.matchRules.items
+      title: t.rules.sections.generalRules.title,
+      items: t.rules.sections.generalRules.items
     },
     {
-      title: t.rules.sections.fairPlay.title,
-      items: t.rules.sections.fairPlay.items
+      title: t.rules.sections.technicalIssues.title,
+      items: t.rules.sections.technicalIssues.items
     },
-    {
-      title: t.rules.sections.penalties.title,
-      items: t.rules.sections.penalties.items
-    }
   ];
 
   return (
-    <section id="guidelines" className="py-20 bg-[#030303] relative overflow-hidden">
+    <section id="guidelines" className="py-20 bg-[#111111] relative overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="text-center mb-16">
@@ -32,33 +28,33 @@ const Rules = () => {
           </div>
         </FadeIn>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {guidelines.map((section, index) => (
-            <FadeIn key={index} delay={index * 0.2}>
-              <div className="bg-[#030303] border border-white/10 rounded-lg p-6 h-full">
-                <h3 className="text-xl font-semibold text-[#C9AD75] mb-6">
-                  {section.title}
-                </h3>
-                <ul className="space-y-4">
-                  {section.items.map((item, itemIndex) => (
-                    <motion.li
-                      key={itemIndex}
-                      className="flex items-start space-x-3"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: itemIndex * 0.1 }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="p-1 bg-[#45A59D]/10 rounded">
-                        <CheckCircle className="h-4 w-4 text-[#45A59D]" />
-                      </div>
-                      <span className="text-gray-300 text-sm">{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-          ))}
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
+            {guidelines.map((section, index) => (
+              <FadeIn key={index} delay={index * 0.2}>
+                <div className="bg-[#030303] border border-white/10 rounded-lg p-6 h-full">
+                  <h3 className="text-xl font-semibold text-[#C9AD75] mb-6">
+                    {section.title}
+                  </h3>
+                  <ul className="space-y-4">
+                    {section.items.map((item, itemIndex) => (
+                      <motion.li
+                        key={itemIndex}
+                        className="flex items-start space-x-3"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: itemIndex * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        <CheckCircle className="h-5 w-5 text-[#45A59D] mt-0.5" />
+                        <span className="text-gray-300">{item}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </div>
     </section>
